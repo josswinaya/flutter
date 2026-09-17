@@ -26,12 +26,9 @@ class _DetailScreenState extends State<DetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detail Katalog'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
+        // Properti leading sengaja dihilangkan agar tombol panah kembali muncul otomatis
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +58,10 @@ class _DetailScreenState extends State<DetailScreen> {
                 color: katalog.warnaPastel,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: Text(katalog.deskripsi, style: const TextStyle(fontSize: 15)),
+              child: Text(
+                katalog.deskripsi,
+                style: const TextStyle(fontSize: 15, height: 1.4),
+              ),
             ),
             const SizedBox(height: 24),
             Center(
@@ -75,7 +75,10 @@ class _DetailScreenState extends State<DetailScreen> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: isFavorite ? Colors.pink[50] : Colors.indigo,
                   foregroundColor: isFavorite ? Colors.red : Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
                 ),
               ),
             ),

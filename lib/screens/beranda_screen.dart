@@ -35,7 +35,10 @@ class BerandaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Katalog Produk')),
+      appBar: AppBar(
+        title: const Text('Katalog Produk'),
+        centerTitle: true,
+      ),
       body: ListView.builder(
         itemCount: daftarKatalog.length,
         itemBuilder: (context, index) {
